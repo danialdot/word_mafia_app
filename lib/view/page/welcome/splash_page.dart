@@ -1,5 +1,6 @@
 import 'package:word_mafia_app/controller/app_config.dart';
 import 'package:word_mafia_app/core/constants.dart';
+import 'package:word_mafia_app/model/local/hive.dart';
 import 'package:word_mafia_app/view/page/game/setup_page.dart';
 import 'package:word_mafia_app/view/page/welcome/server_not_responding.dart';
 import 'package:flutter/material.dart';
@@ -29,7 +30,25 @@ class _SplashPageState extends State<SplashPage> {
   Future _verificationsWithcustomeDelay() async {
     await Future.delayed(const Duration(seconds: 2));
 
+    if (!_loadingStaus) await _checkHive();
     if (!_loadingStaus) await _checkIfServerIsReachable();
+  }
+
+  Future _checkHive() async {
+    var isServerOkay = await _appConfigontroller.checkIfServerIsReachable();
+    if (!context.mounted) return;
+    final HiveControlle hiveControlle = HiveControlle();
+    var url = Uri.parse(AppUrl.getAllWords);
+    if (await hiveControlle.hasCachedData(url.toString())) {
+      Navigator.of(context).pop();
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const SetupPage(),
+        ),
+      );
+      _loadingStaus = true;
+    }
   }
 
   Future _checkIfServerIsReachable() async {
