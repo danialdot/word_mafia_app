@@ -35,7 +35,6 @@ class _SplashPageState extends State<SplashPage> {
   }
 
   Future _checkHive() async {
-    var isServerOkay = await _appConfigontroller.checkIfServerIsReachable();
     if (!context.mounted) return;
     final HiveControlle hiveControlle = HiveControlle();
     var url = Uri.parse(AppUrl.getAllWords);
