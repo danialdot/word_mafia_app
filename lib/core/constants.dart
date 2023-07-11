@@ -32,7 +32,7 @@ class AppUrl {
   static const String base = "https://raw.githubusercontent.com/danialdot/word-mafia-data/main";
   static const String imagePrefix = "$base";
   static const String baseWords = "$base/words";
-  static const String checkIfServerIsReachable = "https://github.com";
+  static const String checkIfServerIsReachable = "https://raw.githubusercontent.com";
   static const String getAllWords = "$baseWords/all-words.json";
 }
 
