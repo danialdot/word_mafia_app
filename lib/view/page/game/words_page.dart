@@ -43,8 +43,8 @@ class _WordsPageState extends State<WordsPage> {
   }
 
   void _generateRandomMafias() async {
+    Random random = Random();
     while (_totalMafias != widget.totalMafias) {
-      Random random = Random();
       int randomNumber = random.nextInt(widget.totalPlayers);
       if (!_isMafiaTracker[randomNumber]) {
         setState(() {
