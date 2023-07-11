@@ -7,6 +7,7 @@ class AppText {
   static const String splashWelcome = "welcome to $appName";
   static const String startingAGame = "starting a game";
   static const String start = "start";
+  static const String finish = "finish";
   static const String notConnectedToTheInternetTitle = "متصل نبودن به اینترنت";
   static const String serverInternalErrorTitle = "متاسفانه مشکل فنی رخ داده است";
   static const String totalPlayers = "total players :";
@@ -42,6 +43,7 @@ class AppImage {
 class AppColor {
   static const Color customBlueGray = Color(0xff526D82);
   static const Color customNavyBlue = Color(0xff323949);
+  static const Color customCharcoalGray = Color(0xff212129);
 
   static const Color customWhiteBackground = Color(0xffffffff);
   static const Color customWhiteText = Color(0xffffffff);

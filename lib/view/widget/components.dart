@@ -65,17 +65,21 @@ Widget customWordCard({required BuildContext context, required String word, requ
       : Container(
           width: MediaQuery.of(context).size.width * 0.8,
           height: MediaQuery.of(context).size.height * 0.5,
-          padding: EdgeInsets.symmetric(
-            horizontal: MediaQuery.of(context).size.width / 12,
-            vertical: MediaQuery.of(context).size.height / 60,
+          padding: const EdgeInsets.symmetric(
+            horizontal: 8,
+            vertical: 8,
           ),
           decoration: BoxDecoration(
-            color: AppColor.customNavyBlue,
-            image: DecorationImage(
-              image: AssetImage(AppImage.BackCardVector),
-              fit: BoxFit.cover,
-            ),
+            color: AppColor.customCharcoalGray,
             borderRadius: BorderRadius.circular(14),
           ),
-        );
+          child: Container(
+            decoration: const BoxDecoration(
+              color: Colors.transparent,
+              image: DecorationImage(
+                image: AssetImage(AppImage.BackCardVector),
+                fit: BoxFit.fill,
+              ),
+            ),
+          ));
 }

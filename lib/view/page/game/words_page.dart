@@ -114,7 +114,7 @@ class _WordsPageState extends State<WordsPage> {
           ),
         ),
         SizedBox(
-          height: MediaQuery.of(context).size.height / 20,
+          height: MediaQuery.of(context).size.height / 6,
         ),
         Center(
           child: GestureDetector(

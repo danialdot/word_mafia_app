@@ -3,6 +3,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:word_mafia_app/core/constants.dart';
 import 'package:word_mafia_app/view/page/custom_scaffold.dart';
+import 'package:word_mafia_app/view/page/game/setup_page.dart';
+import 'package:word_mafia_app/view/widget/components.dart';
 
 class TimerPage extends StatefulWidget {
   final int timerCounter;
@@ -63,6 +65,28 @@ class _TimerPageState extends State<TimerPage> {
               ),
             ),
           ),
+          (myDuration.inSeconds == 0) ? Padding(
+            padding: EdgeInsets.only(
+              top: MediaQuery.of(context).size.height / 20,
+              left: MediaQuery.of(context).size.width / 10,
+              right: MediaQuery.of(context).size.width / 10,
+            ),
+            child: GestureDetector(
+              onTap: () {
+                Navigator.of(context).pop();
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const SetupPage(),
+                  ),
+                );
+              },
+              child: customBlueGrayButton(
+                context: context,
+                text: AppText.finish,
+              ),
+            ),
+          ) : Container(),
         ],
       ),
     );
